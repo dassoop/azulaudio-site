@@ -1,6 +1,7 @@
 # Set up support@azulaudio.com
 
-_Noted 2026-09-30. Decided 2026-09-30: Zoho Mail Lite (paid, ~$1/user/month: real mailbox + IMAP, so support@ can also be added to the Gmail/Apple Mail app and send as support@). Owner adds DNS at Linode by hand.
+_Noted 2026-09-30. DONE 2026-09-30: Zoho Lite live (MX, SPF, DKIM selector zmail, DMARC p=none at Linode); inbound + outbound tested by owner; site footers + privacy page switched to support@. Left: Moonbase sending domain + fulfillment messages (dashboard)._
+_ Decided 2026-09-30: Zoho Mail Lite (paid, ~$1/user/month: real mailbox + IMAP, so support@ can also be added to the Gmail/Apple Mail app and send as support@). Owner adds DNS at Linode by hand.
 No noreply@: Moonbase can't set a reply-to, so its transactional sender should be support@ (replies reach support).
 Once support@ works, also replace the Gmail address on the privacy page (`privacy/index.html`, 2 places)._
 
