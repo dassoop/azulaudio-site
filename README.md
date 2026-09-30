@@ -10,6 +10,15 @@ licenses and downloads are handled by Moonbase's embedded storefront (`moonbase.
 - `site.js`: wires `data-buy="<key>"`, `data-cart`, `data-account` to Moonbase.
 - `product/scatter-kontakt-8/`, `shop/`, `cart/`, `checkout/`, `my-account/`: redirect stubs for old WooCommerce URLs.
 
+## Before pushing
+
+```bash
+python3 tools/bust-cache.py
+```
+
+Stamps every local CSS/JS/image link with `?v=<content hash>` so visitors never get a stale mix of
+old and new files (GitHub Pages lets browsers cache for 10 minutes). Safe to re-run.
+
 ## Run locally
 
 ```bash
