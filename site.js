@@ -14,6 +14,32 @@
     }
   });
 
+  // Hero video: desktop only, and only shown once it's really playing. Phones, reduced motion, data saver,
+  // or a blocked autoplay (e.g. iOS Low Power Mode) keep the still image that sits behind it.
+  var hv = document.querySelector('.hero video');
+  if (hv) {
+    var wantVideo = window.matchMedia('(min-width: 761px)').matches &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+      !(navigator.connection && navigator.connection.saveData);
+    if (!wantVideo) {
+      hv.remove();
+    } else {
+      hv.addEventListener('playing', function () { hv.classList.add('playing'); });
+      hv.src = hv.dataset.src;
+      var p = hv.play();
+      if (p && p.catch) p.catch(function (e) {
+        // NotAllowedError = autoplay refused (keep the still). Anything else, e.g. a background tab
+        // pausing media to save power, retries once the tab is visible; the still shows meanwhile.
+        if (e && e.name === 'NotAllowedError') { hv.remove(); return; }
+        document.addEventListener('visibilitychange', function retry() {
+          if (document.hidden) return;
+          document.removeEventListener('visibilitychange', retry);
+          hv.play().catch(function () { hv.remove(); });
+        });
+      });
+    }
+  }
+
   // Home: transparent bar over the hero, dark once scrolled
   if (document.body.classList.contains('home')) {
     var onScroll = function () { document.body.classList.toggle('scrolled', window.scrollY > 40); };
