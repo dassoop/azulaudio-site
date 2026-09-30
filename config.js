@@ -20,7 +20,7 @@ window.AZUL = {
   // false = buy buttons read "Coming soon" and are disabled.
   // Turn on only once the product is purchasable in Moonbase.
   onSale: {
-    scatter: true,
+    scatter: false,
     transpose: false,
   },
 };
