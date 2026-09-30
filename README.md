@@ -19,6 +19,14 @@ python3 tools/bust-cache.py
 Stamps every local CSS/JS/image link with `?v=<content hash>` so visitors never get a stale mix of
 old and new files (GitHub Pages lets browsers cache for 10 minutes). Safe to re-run.
 
+## Images
+
+- `img/transpose-ui.png` and `img/transpose-{transpose,harmony,detune,chaos}.png`: from the Transpose repo,
+  `./build/UiSnapshot <dir> --on` (`all-notuner.png`, and `tab0..3` cropped to the tab bar + panel:
+  `sips --cropOffset 172 136 -c 748 632`).
+- `img/transpose-cover.png`: square promo in Scatter's cover style, `python3 tools/make-transpose-cover.py`
+  (rebuild after updating `transpose-ui.png`).
+
 ## Run locally
 
 ```bash
