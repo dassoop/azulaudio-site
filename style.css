@@ -198,3 +198,8 @@ h1, h2, h3 { font-family: var(--head); color: var(--ink); line-height: 1.15; mar
 .card .vst-logo { margin: 4px 0 2px; }
 .vst-note { display: flex; align-items: center; gap: 14px; margin-top: 20px; font-size: 13px; color: var(--muted); }
 .site-footer .trademark { flex-basis: 100%; order: 3; font-size: 12px; }
+
+/* Legal pages (privacy) */
+.legal { max-width: 760px; padding-bottom: 80px; }
+.legal h1 { margin-top: 24px; }
+.legal h2 { font-size: 20px; margin-top: 32px; }
