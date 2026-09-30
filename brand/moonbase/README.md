@@ -9,8 +9,8 @@ so use the **dark** logo/wordmark there; the white ones are for dark backgrounds
 | `azul-wordmark-dark.png` (2000x290) | Account settings → Theme → wordmark |
 | `azul-logo-dark.png` (1024 sq) | Account settings → Theme → logo (square mark) |
 | `azul-wordmark-white.png`, `azul-logo-white.png` | Dark backgrounds |
-| `icon-scatter.png` (1024 sq) | Scatter product → icon |
-| `icon-transpose.png` (1024 sq) | Transpose product → icon |
+| `icon-scatter.png` (1024 sq) | Scatter product → icon (top-left crop of `img/scatter-cover.png`) |
+| `icon-transpose.png` (1024 sq) | Transpose product → icon (top-left crop of `img/transpose-cover.png`) |
 
 ## Theme settings (to match azulaudio.com)
 
