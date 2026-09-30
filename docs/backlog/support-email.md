@@ -1,6 +1,8 @@
 # Set up support@azulaudio.com
 
-_Noted 2026-09-30. Not started._
+_Noted 2026-09-30. Decided 2026-09-30: Zoho Mail Forever Free (real mailbox), owner adds DNS at Linode by hand.
+No noreply@: Moonbase can't set a reply-to, so its transactional sender should be support@ (replies reach support).
+Once support@ works, also replace the Gmail address on the privacy page (`privacy/index.html`, 2 places)._
 
 azulaudio.com has no email today (no MX or TXT records at Linode DNS), so customer contact points
 at the owner's personal Gmail. Replace it with `support@azulaudio.com`.
