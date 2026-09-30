@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scatter for Kontakt 8 – Azul Audio</title>
+<meta name="description" content="Scatter randomizes pan, volume and pitch on every note in Kontakt 8.">
+<link rel="icon" href="/img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Onest:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Azul Audio home"><img src="/img/logo-white.png" alt="Azul Audio"></a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="nav">
+      <div class="dropdown active">
+        <a class="dropdown-link" href="/#products">Products</a>
+        <button class="dropdown-toggle" aria-label="Show products" aria-expanded="false" aria-haspopup="true"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="dropdown-menu">
+          <a href="/scatter/" aria-current="page">Scatter</a>
+          <a href="/transpose/">Transpose</a>
+        </div>
+      </div>
+      <button data-cart>Cart</button>
+      <button data-account>My account</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="crumbs"><a href="/">Home</a> / <a href="/#products">Products</a> / Scatter</div>
+
+  <section class="product">
+    <div class="gallery">
+      <img src="/img/scatter-cover.png" alt="Scatter cover with interface">
+      <img src="/img/scatter-ui.png" alt="Scatter interface close-up">
+    </div>
+    <div class="summary">
+      <h1>Scatter – Kontakt 8</h1>
+      <div class="price" data-price="scatter"></div>
+      <p><strong>Dynamic sound randomization for Kontakt 8.</strong> Scatter randomizes pan, volume and
+        pitch with each triggered note, so no two playthroughs are the same.</p>
+      <button class="btn primary" data-buy="scatter">Buy now</button>
+      <ul class="specs">
+        <li><span>Format</span><span>Kontakt 8 instrument</span></li>
+        <li><span>Platforms</span><span>macOS &amp; Windows</span></li>
+        <li><span>Activation</span><span>Native Instruments serial via Native Access</span></li>
+        <li><span>Delivery</span><span>Instant: serial by email and in your account</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="details">
+    <h2>Description</h2>
+    <p>Scatter is a powerful <strong>cross-platform utility</strong> designed to bring organic variation to
+      your sounds by dynamically randomizing <strong>pan, volume, and pitch</strong> with each triggered note.
+      Inspired by the natural unpredictability of real-world sound design, Scatter ensures that no two
+      playthroughs are ever the same, making it an essential tool for composers, game audio designers, and
+      experimental producers.</p>
+    <p>With an intuitive interface and deep customization options, Scatter lets you control the
+      <strong>range and behavior</strong> of each parameter, from subtle fluctuations to extreme
+      transformations. Whether you're crafting immersive soundscapes, randomized percussive textures, or
+      expressive melodic layers, Scatter brings a new level of depth and realism to your projects, all within
+      the power of Kontakt 8.</p>
+
+    <h2>How you get it</h2>
+    <ol class="steps">
+      <li><span>Buy Scatter. Your Native Instruments serial number arrives by email and stays in
+        <a href="#" data-account>your account</a>.</span></li>
+      <li><span>Open <a href="https://www.native-instruments.com/en/specials/native-access/" rel="noopener">Native Access</a>
+        and choose <em>Add a serial</em>.</span></li>
+      <li><span>Paste the serial. Native Access downloads and installs Scatter, and it appears in Kontakt 8.</span></li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Copyright © 2026 Azul Audio</span>
+    <span><a href="#" data-account>My account</a><a href="mailto:ssummer.lance@gmail.com">Contact</a></span>
+  </div>
+</footer>
+
+<script src="/config.js"></script>
+<script src="/site.js"></script>
+</body>
+</html>

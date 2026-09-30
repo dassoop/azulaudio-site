@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transpose – Azul Audio</title>
+<meta name="description" content="Transpose is a real-time guitar pitch shifter with harmony, detune and chaos effects. AU and VST3.">
+<link rel="icon" href="/img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Onest:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Azul Audio home"><img src="/img/logo-white.png" alt="Azul Audio"></a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="nav">
+      <div class="dropdown active">
+        <a class="dropdown-link" href="/#products">Products</a>
+        <button class="dropdown-toggle" aria-label="Show products" aria-expanded="false" aria-haspopup="true"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="dropdown-menu">
+          <a href="/scatter/">Scatter</a>
+          <a href="/transpose/" aria-current="page">Transpose</a>
+        </div>
+      </div>
+      <button data-cart>Cart</button>
+      <button data-account>My account</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="crumbs"><a href="/">Home</a> / <a href="/#products">Products</a> / Transpose</div>
+
+  <section class="product">
+    <div class="gallery">
+      <img src="/img/transpose-ui.png" alt="Transpose plugin interface showing Transpose, Harmony, Detune and Chaos modules">
+    </div>
+    <div class="summary">
+      <h1>Transpose</h1>
+      <div class="price" data-price="transpose"></div>
+      <p><strong>Real-time guitar pitch shifting with near-zero attack latency.</strong> Four effects in one
+        plugin: whole-guitar transpose, scale-aware harmony, detune, and a momentary chaos sweep.</p>
+      <button class="btn primary" data-buy="transpose">Buy now</button>
+      <ul class="specs">
+        <li><span>Formats</span><span>AU, VST3</span></li>
+        <li><span>macOS</span><span>11.0+, Apple silicon &amp; Intel</span></li>
+        <li><span>Windows</span><span>VST3</span></li>
+        <li><span>Activation</span><span>Sign in with your Azul Audio account</span></li>
+        <li><span>Delivery</span><span>Instant download from your account</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="details">
+    <h2>Four effects, one plugin</h2>
+    <div class="cols">
+      <div class="feature"><h3><span class="fx-icon"><img src="/img/icons/transpose.svg" alt="" width="34" height="22"></span>Transpose</h3><p>Shift the whole guitar from −12 to +12 semitones.</p></div>
+      <div class="feature"><h3><span class="fx-icon"><img src="/img/icons/harmony.svg" alt="" width="34" height="22"></span>Harmony</h3><p>A scale-aware second voice: pick key, scale, interval and mix.</p></div>
+      <div class="feature"><h3><span class="fx-icon"><img src="/img/icons/detune.svg" alt="" width="34" height="22"></span>Detune</h3><p>A fractionally shifted copy with drift, blended to taste.</p></div>
+      <div class="feature"><h3><span class="fx-icon"><img src="/img/icons/chaos.svg" alt="" width="34" height="22"></span>Chaos</h3><p>A momentary distorted pitch sweep (−12 / +12 / +24) with drive and chorus.</p></div>
+    </div>
+
+    <h2>Built for playing live</h2>
+    <p>Pick attacks pass through in 1–3 ms, so fast playing stays tight. Place Transpose first in your chain,
+      before any amp sim.</p>
+    <p>Also included: input and output trims with peak/RMS meters, a tuner for the input and the transposed
+      output, factory and user presets, and a resizable window (75–200%).</p>
+
+    <h2>How you get it</h2>
+    <ol class="steps">
+      <li><span>Buy Transpose and create your Azul Audio account at checkout.</span></li>
+      <li><span>Download the Mac or Windows installer from <a href="#" data-account>your account</a>.</span></li>
+      <li><span>Open Transpose in your DAW and sign in to activate.</span></li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Copyright © 2026 Azul Audio</span>
+    <span><a href="#" data-account>My account</a><a href="mailto:ssummer.lance@gmail.com">Contact</a></span>
+  </div>
+</footer>
+
+<script src="/config.js"></script>
+<script src="/site.js"></script>
+</body>
+</html>
