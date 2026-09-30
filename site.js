@@ -8,7 +8,7 @@
     el.textContent = p || 'Coming soon';
   });
   document.querySelectorAll('[data-buy]').forEach(function (btn) {
-    if (!cfg.prices[btn.dataset.buy]) {
+    if (!cfg.prices[btn.dataset.buy] || !cfg.onSale[btn.dataset.buy]) {
       btn.disabled = true;
       btn.textContent = 'Coming soon';
     }

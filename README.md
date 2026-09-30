@@ -5,7 +5,7 @@ licenses and downloads are handled by Moonbase's embedded storefront (`moonbase.
 
 ## Edit
 
-- `config.js`: Moonbase account URL, product IDs, display prices. The only file to touch for store changes.
+- `config.js`: Moonbase account URL, product IDs, display prices, and `onSale` (enables each Buy button). The only file to touch for store changes.
 - `index.html`, `scatter/`, `transpose/`: pages (use relative paths, e.g. `../img/...`). Header/footer are repeated in each page.
 - `site.js`: wires `data-buy="<key>"`, `data-cart`, `data-account` to Moonbase.
 - `product/scatter-kontakt-8/`, `shop/`, `cart/`, `checkout/`, `my-account/`: redirect stubs for old WooCommerce URLs.

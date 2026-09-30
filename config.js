@@ -11,9 +11,16 @@ window.AZUL = {
   },
 
   // Display prices (Moonbase checkout shows the real price, tax and currency).
-  // null = "Coming soon" and the buy button is disabled.
+  // null = shows "Coming soon" instead of a price.
   prices: {
     scatter: '$20',
-    transpose: null,
+    transpose: '$29',
+  },
+
+  // false = buy buttons read "Coming soon" and are disabled.
+  // Turn on only once the product is purchasable in Moonbase.
+  onSale: {
+    scatter: true,
+    transpose: false,
   },
 };
