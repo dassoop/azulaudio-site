@@ -6,7 +6,7 @@ licenses and downloads are handled by Moonbase's embedded storefront (`moonbase.
 ## Edit
 
 - `config.js`: Moonbase account URL, product IDs, display prices. The only file to touch for store changes.
-- `index.html`, `scatter/`, `transpose/`: pages. Header/footer are repeated in each page.
+- `index.html`, `scatter/`, `transpose/`: pages (use relative paths, e.g. `../img/...`). Header/footer are repeated in each page.
 - `site.js`: wires `data-buy="<key>"`, `data-cart`, `data-account` to Moonbase.
 - `product/scatter-kontakt-8/`, `shop/`, `cart/`, `checkout/`, `my-account/`: redirect stubs for old WooCommerce URLs.
 
@@ -27,7 +27,13 @@ Open http://localhost:8080 (paths are root-relative, so serve from this folder).
 
 ## Deploy (GitHub Pages, DNS stays on Linode)
 
-1. Push to GitHub; Settings → Pages → deploy from `main` / root. `CNAME` already holds `azulaudio.com`.
-2. Linode DNS for azulaudio.com: apex A records → 185.199.108.153, .109.153, .110.153, .111.153;
-   `www` CNAME → `<github-user>.github.io`.
-3. Pages → Enforce HTTPS once the certificate is issued.
+Live preview: https://dassoop.github.io/azulaudio-site/ (Pages builds from `main`, repo root).
+Paths are relative so the site works both there and on the custom domain (`404.html` uses root paths and
+only styles correctly on the custom domain).
+
+Cutover to azulaudio.com:
+1. `git mv CNAME.cutover CNAME`, commit, push (Pages then serves azulaudio.com; the github.io URL redirects there).
+2. Linode DNS for azulaudio.com: apex A records -> 185.199.108.153, 185.199.109.153, 185.199.110.153,
+   185.199.111.153; `www` CNAME -> `dassoop.github.io`.
+3. Repo Settings -> Pages -> Enforce HTTPS once the certificate is issued.
+4. Moonbase account settings: whitelist `azulaudio.com` and `www.azulaudio.com` if checkout is blocked.
