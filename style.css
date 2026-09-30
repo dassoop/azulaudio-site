@@ -139,6 +139,11 @@ h1, h2, h3 { font-family: var(--head); color: var(--ink); line-height: 1.15; mar
   background: #1e1f23; border: 1px solid #2c2d33; border-radius: 8px;
 }
 .fx-icon img { width: 40px; height: auto; }
+.fx-shot {
+  width: 100%; height: auto; margin-bottom: 16px;
+  border-radius: 10px; background: #1e1f23; box-shadow: 0 6px 20px rgba(0,0,0,.18);
+}
+@media (max-width: 480px) { .fx-shot { max-width: 340px; margin-left: auto; margin-right: auto; } }
 .steps { counter-reset: s; list-style: none; padding: 0; display: grid; gap: 14px; }
 .steps li { counter-increment: s; display: grid; grid-template-columns: 36px 1fr; gap: 12px; align-items: start; }
 .steps li::before {
