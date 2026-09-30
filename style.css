@@ -117,7 +117,12 @@ h1, h2, h3 { font-family: var(--head); color: var(--ink); line-height: 1.15; mar
 .crumbs a { color: var(--muted); text-decoration: none; }
 .product { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding: 24px 0 64px; align-items: start; }
 .product .gallery { display: grid; gap: 12px; }
-.product .gallery img { width: 100%; border: 1px solid var(--line); }
+.product .gallery img { width: 100%; height: auto; border: 1px solid var(--line); }
+/* Wide product shot (Transpose): image across the top, summary + specs side by side below */
+.product-wide { grid-template-columns: 1.1fr 1fr; gap: 32px 48px; }
+.product-wide .gallery { grid-column: 1 / -1; }
+.product-wide .gallery img { border: 0; border-radius: 12px; background: #1e1f23; box-shadow: 0 10px 30px rgba(0,0,0,.18); }
+.product-wide .specs { margin-top: 0; align-self: start; }
 .product h1 { font-size: 36px; }
 .product .price { font: 600 24px/1 var(--head); color: var(--accent-ink); margin: 8px 0 20px; }
 .product .summary p { margin: 0 0 16px; }
