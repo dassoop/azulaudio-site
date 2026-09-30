@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Build img/transpose-cover.png, the square promo image, in the style of Scatter's cover:
-product name in thin type, a coloured underline, the plugin UI in the middle, Azul Audio mark
+product name in thin type, the plugin UI in the middle, Azul Audio mark
 bottom left. Uses img/transpose-ui.png (UiSnapshot --on, all-notuner) and img/logo-white.png.
 
     python3 tools/make-transpose-cover.py
@@ -46,19 +46,13 @@ def rounded(im, r):
 img = background()
 d = ImageDraw.Draw(img)
 
-# Title + coloured underline (Scatter: one long bar then dashes; here one segment per effect)
+# Title
 title_font = ImageFont.truetype(FONT, 150, index=THIN)
 x0, ty, tracking = 52, 44, 10          # letter-spaced like Scatter's title
 x = x0
 for ch in "Transpose":
     d.text((x, ty), ch, font=title_font, fill=(255, 255, 255))
     x += title_font.getlength(ch) + tracking
-ul_y = ty + 196
-segs = [(BLUE, 300), (PURPLE, 70), (YELLOW, 70), (RED, 70)]
-x = x0 + 4
-for col, width in segs:
-    d.rectangle([x, ul_y, x + width, ul_y + 13], fill=col)
-    x += width + 36
 
 # Plugin UI, centred, rounded, with a soft shadow
 ui = Image.open(ROOT / "img/transpose-ui.png").convert("RGBA")
