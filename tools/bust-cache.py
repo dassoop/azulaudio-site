@@ -11,6 +11,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 EXT = r'(?:css|js|png|jpe?g|svg|webp|mp4)'
 ATTR = re.compile(r'((?:href|src|poster)=")((?!https?:|//|mailto:|#)[^"?#]+\.' + EXT + r')(?:\?v=[0-9a-f]+)?(")')
 
+SITE_ABS = re.compile(r'(content="https://azulaudio\.com/)([^"?#]+\.' + EXT + r')(?:\?v=[0-9a-f]+)?(")')
+
 def digest(path):
     return hashlib.sha1(path.read_bytes()).hexdigest()[:8]
 
@@ -26,6 +28,7 @@ for page in sorted(ROOT.rglob('*.html')):
             return m.group(0)
         return f'{m.group(1)}{m.group(2)}?v={digest(target)}{m.group(3)}'
     new = ATTR.sub(repl, text)
+    new = SITE_ABS.sub(lambda m: f'{m.group(1)}{m.group(2)}?v={digest(ROOT / m.group(2))}{m.group(3)}' if (ROOT / m.group(2)).exists() else m.group(0), new)
     if new != text:
         page.write_text(new); changed += 1
         print(f'updated {page.relative_to(ROOT)}')
