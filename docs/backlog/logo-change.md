@@ -1,5 +1,15 @@
 # Replace the Azul Audio logo before launch
 
+**Done 2026-09-30 for the site (#1–7) and the Moonbase files (#8–12): the squid logo.** The plugin side (#13–15)
+was done in the Transpose repo (`0ec6103`). Still to do: upload #8, #9 in the Moonbase dashboard; #16 (NI artwork).
+
+Rebuild everything after a future logo change:
+```bash
+python3 tools/make-logos.py && python3 tools/make-scatter-cover.py && python3 tools/make-transpose-cover.py \
+  && python3 tools/make-brand-assets.py && python3 tools/bust-cache.py
+```
+(re-render `img/transpose-*.png` from the plugin first; see README "Images").
+
 _Inventory taken 2026-09-30. Two versions of the logo are in use:_
 - **Mark**: the wave symbol alone.
 - **Wordmark**: wave + "Azul Audio" text.

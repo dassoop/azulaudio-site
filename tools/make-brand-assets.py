@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Build Moonbase store branding + product icons into brand/moonbase/.
 
-Wordmark source: the Azul Audio SVG in the Transpose repo (assets/AzulAudio.svg), rendered to an ink
-mask first (see brand/moonbase/README.md). Icons are crops of each product's cover.
+Logo + wordmark: rendered from the master SVGs in the Transpose repo (tools/logo_masks.py).
+Icons: crops of each product's cover.
 
-    python3 tools/make-brand-assets.py <ink-mask.png>
+    python3 tools/make-brand-assets.py
 """
 import pathlib, sys
 from PIL import Image, ImageDraw
@@ -34,16 +34,14 @@ def pad_square(im, size, margin):
     return canvas
 
 
-# --- Wordmark + logo from the ink mask --------------------------------------------------------
-ink = Image.open(sys.argv[1]).convert("L")
-# split the wave mark from the letters at the first fully empty column gap
-cols = [ink.crop((x, 0, x + 1, ink.height)).getextrema()[1] for x in range(ink.width)]
-gap = next(x for x in range(ink.width // 8, ink.width) if all(c < 20 for c in cols[x:x + 12]))
-wave = ink.crop((0, 0, gap, ink.height)); wave = wave.crop(wave.point(lambda v: 255 if v > 20 else 0).getbbox())
+# --- Wordmark + logo (squid) from the master SVGs ---------------------------------------------
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from logo_masks import mark, word, tinted as _t, on_square
 
+ink_word, ink_mark = word(), mark()
 for name, rgb in (("dark", DARK), ("white", WHITE)):
-    fit(tinted(ink, rgb), w=2000).save(OUT / f"azul-wordmark-{name}.png", optimize=True)
-    pad_square(tinted(wave, rgb), 1024, 120).save(OUT / f"azul-logo-{name}.png", optimize=True)
+    fit(_t(ink_word, rgb), w=2000).save(OUT / f"azul-wordmark-{name}.png", optimize=True)
+    on_square(_t(ink_mark, rgb), 1024, 110).save(OUT / f"azul-logo-{name}.png", optimize=True)
 
 
 # --- Product icons: top-left crop of each product's square cover (title + UI corner), rounded tile ---

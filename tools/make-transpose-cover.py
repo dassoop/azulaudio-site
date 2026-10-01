@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build img/transpose-cover.png, the square promo image, in the style of Scatter's cover:
 product name in thin type, the plugin UI in the middle, Azul Audio mark
-bottom left. Uses img/transpose-ui.png (UiSnapshot --on, all-notuner) and img/logo-white.png.
+bottom left. Uses img/transpose-ui.png (UiSnapshot --on, all-notuner) and img/wordmark-white.png.
 
     python3 tools/make-transpose-cover.py
 """
@@ -11,7 +11,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 S = 1200                                   # output size (square)
 FONT = "/System/Library/Fonts/HelveticaNeue.ttc"
-LIGHT, THIN = 7, 12                        # face indexes in HelveticaNeue.ttc
+THIN = 12                        # face indexes in HelveticaNeue.ttc
 BLUE, PURPLE, YELLOW, RED = (61, 120, 196), (126, 91, 181), (183, 150, 47), (185, 74, 79)   # plugin accents
 
 
@@ -66,15 +66,11 @@ shadow = shadow.filter(ImageFilter.GaussianBlur(24))
 img.paste(shadow, (0, 0), shadow)
 img.paste(ui, (40, uy), ui)
 
-# Azul Audio mark, bottom left
-logo = Image.open(ROOT / "img/logo-white.png").convert("RGBA")
-bbox = logo.getbbox(); logo = logo.crop(bbox)
-lh = 62
-logo = logo.resize((round(logo.width * lh / logo.height), lh), Image.LANCZOS)
-ly = S - 56 - lh
-img.paste(logo, (x0, ly), logo)
-word_font = ImageFont.truetype(FONT, 62, index=LIGHT)
-d.text((x0 + logo.width + 14, ly + lh / 2), "Azul Audio", font=word_font, fill=(255, 255, 255), anchor="lm")
+# Azul Audio wordmark (squid + name), bottom left; built by tools/make-logos.py
+mark = Image.open(ROOT / "img/wordmark-white.png").convert("RGBA")
+mh = 78
+mark = mark.resize((round(mark.width * mh / mark.height), mh), Image.LANCZOS)
+img.paste(mark, (x0, S - 56 - mh), mark)
 
 out = ROOT / "img/transpose-cover.png"
 img.save(out, optimize=True)

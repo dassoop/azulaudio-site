@@ -26,6 +26,10 @@ old and new files (GitHub Pages lets browsers cache for 10 minutes). Safe to re-
   `sips --cropOffset 172 136 -c 748 632`).
 - `img/transpose-cover.png`: square promo in Scatter's cover style, `python3 tools/make-transpose-cover.py`
   (rebuild after updating `transpose-ui.png`).
+- Logos (`img/logo-white.png`, `favicon-32.png`, `apple-touch-icon.png`, `wordmark-white.png`):
+  `python3 tools/make-logos.py`, from the master SVGs in `Workspace_PitchShifter/assets/`.
+- `img/scatter-cover.png`: `python3 tools/make-scatter-cover.py` swaps the logo on the original render
+  (`brand/source/scatter-cover-original.png`; needs OpenCV).
 
 ## Run locally
 

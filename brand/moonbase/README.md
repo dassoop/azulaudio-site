@@ -21,7 +21,7 @@ so use the **dark** logo/wordmark there; the white ones are for dark backgrounds
 
 ## Rebuild
 
-`tools/make-brand-assets.py <ink-mask.png>`. The ink mask is the wordmark from
-`Workspace_PitchShifter/assets/AzulAudio.svg`, rendered with Quick Look after padding the SVG to a
-square viewBox (`viewBox="-40 -1126.5 2818 2818"`, `qlmanage -t -s 4000`), inverted to greyscale
-and cropped to its content.
+`python3 tools/make-brand-assets.py`. The logo and wordmark come straight from the master SVGs in
+`Workspace_PitchShifter/assets/` (`AzulMark.svg`, `AzulAudio.svg`) via `tools/logo_masks.py` (Quick Look
+render, macOS). Icons are crops of `img/scatter-cover.png` and `img/transpose-cover.png`, so rebuild the
+covers first.
