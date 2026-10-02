@@ -13,6 +13,9 @@
       btn.textContent = 'Coming soon';
     }
   });
+  document.querySelectorAll('[data-add]').forEach(function (btn) {   // Add to cart: only when on sale
+    if (!cfg.prices[btn.dataset.add] || !cfg.onSale[btn.dataset.add]) btn.remove();
+  });
 
   // Hero video: desktop only, and only shown once it's really playing. Phones, reduced motion, data saver,
   // or a blocked autoplay (e.g. iOS Low Power Mode) keep the still image that sits behind it.
@@ -105,11 +108,15 @@
 
   document.addEventListener('click', function (e) {
     var buy = e.target.closest('[data-buy]');
+    var add = e.target.closest('[data-add]');
     var cart = e.target.closest('[data-cart]');
     var account = e.target.closest('[data-account]');
     if (buy) {
       e.preventDefault();
       run(function (M) { return M.purchase({ product_id: cfg.products[buy.dataset.buy] }); });
+    } else if (add) {
+      e.preventDefault();
+      run(function (M) { return M.add_to_cart({ product_id: cfg.products[add.dataset.add] }); });
     } else if (cart) {
       e.preventDefault();
       run(function (M) { return M.view_cart(); });
