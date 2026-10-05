@@ -21,6 +21,6 @@ window.AZUL = {
   // Turn on only once the product is purchasable in Moonbase.
   onSale: {
     scatter: true,
-    transpose: false,
+    transpose: true,
   },
 };
