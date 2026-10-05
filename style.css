@@ -99,6 +99,8 @@ h1, h2, h3 { font-family: var(--head); color: var(--ink); line-height: 1.15; mar
 .card h3 a { color: inherit; text-decoration: none; }
 .card .tag { font-size: 13px; color: var(--muted); }
 .card .price { color: var(--accent-ink); font-weight: 600; }
+.card .price-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .trial-link { font-size: 13px; }
 .card-actions { margin-top: auto; padding-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
 .card-actions .btn { padding: 11px 13px; font-size: 12px; letter-spacing: .06em; }
 
