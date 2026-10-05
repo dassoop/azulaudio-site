@@ -111,6 +111,7 @@
     var add = e.target.closest('[data-add]');
     var cart = e.target.closest('[data-cart]');
     var account = e.target.closest('[data-account]');
+    var trial = e.target.closest('[data-trial]');
     if (buy) {
       e.preventDefault();
       run(function (M) { return M.purchase({ product_id: cfg.products[buy.dataset.buy] }); });
@@ -120,6 +121,9 @@
     } else if (cart) {
       e.preventDefault();
       run(function (M) { return M.view_cart(); });
+    } else if (trial) {   // trial download: Moonbase asks the visitor to sign in or sign up first
+      e.preventDefault();
+      run(function (M) { return M.download_product({ product_id: cfg.products[trial.dataset.trial] }); });
     } else if (account) {
       e.preventDefault();
       run(function (M) { return M.view_account(); });
