@@ -20,19 +20,17 @@ Built by `python3 tools/make-social-kit.py` from the site's brand sources. Don't
 | | Cover photo | `facebook/fb-cover-1640x924.jpg` | Desktop crops it to the middle band, phones trim the sides. The wordmark fits both. |
 | | Link post image | `facebook/fb-link-post-1200x630.jpg` | Same as the site's link preview. |
 
-Other profile-picture backgrounds: `profile/azul-avatar-{teal,dark,ocean,white}-1080.png`. Teal is the default everywhere, so use the same one on every account.
+Other profile-picture backgrounds: `profile/azul-avatar-{black,ocean,white}-1080.png`. Black is the default everywhere, so use the same one on every account.
 
-Logos (transparent PNG): `logos/azul-wordmark-{white,dark,teal}.png`, `logos/azul-squid-{white,dark,teal}.png`.
-Use white on photos and dark backgrounds, and dark or teal on light ones.
+Logos (transparent PNG): `logos/azul-wordmark-{white,black}.png`, `logos/azul-squid-{white,black}.png`.
+Use white on photos and black backgrounds, and black on light ones.
 
 ## Brand
 
 | | Value |
 |---|---|
-| Teal (brand, buttons, avatar background) | `#078A82` |
-| Teal light (accents on dark only) | `#0BB4AA` |
-| Ink / dark background | `#101010` / `#151515` |
-| White | `#FFFFFF` |
+| Palette | **Mono** (chosen 2026-10-06): black `#101010` and white `#FFFFFF`. No brand accent colour |
+| Colour | Comes only from the ocean photo |
 | Heading font | Onest (500–700), Google Fonts |
 | Body font | Inter (400, 600), Google Fonts |
 | Photo | Ocean hero (`img/hero.jpg`), darkened about 30–35% behind white logos |
