@@ -14,7 +14,7 @@ so use the **dark** logo/wordmark there; the white ones are for dark backgrounds
 
 ## Theme settings (to match azulaudio.com)
 
-- Brand colour: `#078A82` (the site's teal; the lighter `#0BB4AA` is too low-contrast behind white text)
+- Brand colour: `#101010` (mono palette, 2026-10-06; was teal `#078A82`)
 - Contrast colour: `#FFFFFF`
 - Heading font: Onest · Body font: Inter (both Google Fonts)
 - Corners: Soft · Buttons: Light
