@@ -86,9 +86,7 @@ def highlight(art, name, bg=INK, size=560):
     save(c, f"instagram/highlights/ig-highlight-{name}.png")
 
 highlight(tinted(MARK, WHITE), "azul")
-for prod in ("transpose", "scatter"):
-    icon = Image.open(ROOT / f"brand/moonbase/icon-{prod}.png").convert("RGBA")
-    highlight(icon, prod, size=760)   # product tile fills most of the circle
+# Product highlights (rounded product tiles) were dropped 2026-10-06: a rounded square in a circle looked off.
 
 # --- TikTok ----------------------------------------------------------------------------------------
 save(avatars["black"], "tiktok/tiktok-profile-1080.png")

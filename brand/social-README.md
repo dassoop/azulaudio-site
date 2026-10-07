@@ -9,7 +9,7 @@ Built by `python3 tools/make-social-kit.py` from the site's brand sources. Don't
 | Instagram | Profile picture | `instagram/ig-profile-1080.png` | Shown as a circle (110 px). |
 | | Post | `instagram/ig-post-square-1080x1080.jpg`, `ig-post-portrait-1080x1350.jpg` | Brand/intro posts. |
 | | Story / Reel background | `instagram/ig-story-1080x1920.jpg` | The wordmark stays clear of the story UI at the top and bottom. |
-| | Highlight covers | `instagram/highlights/ig-highlight-*.png` | Azul, Transpose, Scatter. Post each as a story, then set it as the cover. |
+| | Highlight cover | `instagram/highlights/ig-highlight-azul.png` | White squid on black. Post it as a story, then set it as the cover. |
 | TikTok | Profile picture | `tiktok/tiktok-profile-1080.png` | Shown as a circle. |
 | | Video cover / background | `tiktok/tiktok-cover-1080x1920.jpg` | Kept clear of the caption and side buttons. |
 | YouTube | Profile picture | `youtube/yt-profile-800.png` | 800x800, shown as a circle. |
@@ -39,4 +39,3 @@ Use white on photos and black backgrounds, and black on light ones.
 ## Sources
 
 - Squid and wordmark: master SVGs in `Workspace_PitchShifter/assets/` (`AzulMark.svg`, `AzulAudio.svg`), rendered by `tools/logo_masks.py` (macOS).
-- Product highlight icons: `brand/moonbase/icon-*.png` (run `tools/make-brand-assets.py` first if the covers change).
