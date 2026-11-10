@@ -1,5 +1,9 @@
 # azulaudio.com
 
+> **Workspace archived 2026-11-09** (moved to `01_Projects/00_Archive/Workspace_AzulSite`). The site stays LIVE:
+> GitHub Pages serves `main` of `dassoop/azulaudio-site`, so pushing to `main` still deploys. No active features.
+> Open backlog: `docs/backlog/logo-change.md` (Moonbase dashboard uploads #8, #9; NI artwork #16).
+
 Static site for Azul Audio. No build step: plain HTML/CSS/JS. Checkout, customer accounts, serials,
 licenses and downloads are handled by Moonbase's embedded storefront (`moonbase.js`).
 
